@@ -32,7 +32,9 @@ Bank.prototype.getTotalAssets = function () {
     return 0;
   } else {
     for (var i = 1; i < this.accounts.length + 1; i++) {
-      total += this.getAccount(i).getBalance();
+      if (this.getAccount(i) !== null) {
+        total += this.getAccount(i).getBalance();
+      }
     }
     return total;
   }
