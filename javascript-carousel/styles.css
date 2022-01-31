@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.carousel {
+  height: 400px;
+  width: 600px;
+
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  width: 230px;
+}
+
+.ctrl {
+  font-size: 2rem;
+}
+
+.ctrl:hover {
+  cursor: pointer;
+}
+
+.image-carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.progress-dot {
+  padding: 5px;
+}
+
+.fa-circle {
+  cursor: pointer;
+}
