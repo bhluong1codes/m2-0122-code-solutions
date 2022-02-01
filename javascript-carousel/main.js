@@ -10,11 +10,11 @@ var $progressBar = document.querySelector('.progress-bar');
 
 function cycleImg() {
   counter++;
-  $img.src = 'http://127.0.0.1:5500/javascript-carousel/images/' + imgGallery[counter] + '.png';
+  $img.src = 'images/' + imgGallery[counter] + '.png';
   if (counter > imgCount) {
     counter = 0;
   }
-  $img.src = 'http://127.0.0.1:5500/javascript-carousel/images/' + imgGallery[counter] + '.png';
+  $img.src = 'images/' + imgGallery[counter] + '.png';
   cycleDot();
 }
 
@@ -28,26 +28,26 @@ $imgCarousel.addEventListener('click', control);
 function control(event) {
   if (event.target.classList.contains('fa-chevron-right')) {
     counter++;
-    $img.src = 'http://127.0.0.1:5500/javascript-carousel/images/' + imgGallery[counter] + '.png';
+    $img.src = 'images/' + imgGallery[counter] + '.png';
     if (counter > imgCount) {
       counter = 0;
     }
-    $img.src = 'http://127.0.0.1:5500/javascript-carousel/images/' + imgGallery[counter] + '.png';
+    $img.src = 'images/' + imgGallery[counter] + '.png';
     cycleDot();
   } else {
     counter--;
 
-    $img.src = 'http://127.0.0.1:5500/javascript-carousel/images/' + imgGallery[counter] + '.png';
+    $img.src = 'images/' + imgGallery[counter] + '.png';
     if (counter < 0) {
       counter = imgCount;
     }
-    $img.src = 'http://127.0.0.1:5500/javascript-carousel/images/' + imgGallery[counter] + '.png';
+    $img.src = 'images/' + imgGallery[counter] + '.png';
     cycleDot();
   }
   reset();
 }
 
-function cycleDot(event) {
+function cycleDot() {
   for (var i = 0; i < $progressDot.length; i++) {
     if (i === counter) {
       $progressDot[i].children.item(0).className = 'fas fa-circle';
@@ -64,7 +64,7 @@ $progressBar.addEventListener('click', function (event) {
   }
   var dataIndex = event.target.getAttribute('data-id');
 
-  $img.src = 'http://127.0.0.1:5500/javascript-carousel/images/' + imgGallery[dataIndex - 1] + '.png';
+  $img.src = 'images/' + imgGallery[dataIndex - 1] + '.png';
 
   for (var i = 0; i < $progressDot.length; i++) {
     if (dataIndex - 1 === i) {
