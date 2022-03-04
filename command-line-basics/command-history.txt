@@ -1,0 +1,162 @@
+    1  git config --global user.name "Brian Luong"
+    2  git config --global user.email "bhluong1codes@gmail.com"
+    3  git config --global --list
+    4  http https://example.com
+    5  http --verbose https://example.com
+    6  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+    7  cd ~/repos/m2-0122-code-solutions
+    8  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+    9  http --body GET https://example.com > http-messages/index.html
+   10  git switch master
+   11  git pull origin master
+   12  git branch javascript-ajax
+   13  git switch javascript-ajax
+   14  git status
+   15  git add javascript-ajax
+   16  git commit -m "Completed javascript-ajax"
+   17  git push origin javascript-ajax
+   18  cd ~/repos
+   19  git clone git@github.com:bhluong1codes/ajax-project.git
+   20  cd ajax-project
+   21  npm ci
+   22  git branch user-can-view-list-of-characters
+   23  git switch user-can-view-list-of-characters 
+   24  git status
+   25  git add ajax-project
+   26  git add css/layout.css
+   27  git add css/styles.css
+   28  git add index.html
+   29  git commit -m "nav on mobile"
+   30  git status
+   31  git add css/styles.css
+   32  git commit -m "nav on mobile"
+   33  git push origin user-can-view-list-of-characters
+   34  git status
+   35  git add css/layout.css
+   36  git add css/reset.css
+   37  git add css.styles.css
+   38  git add css/styles.css
+   39  git add index.html 
+   40  git add images/Harrypotter.jpg 
+   41  git add images/Potter.jpg 
+   42  git commit -m "Completed mobile homepage"
+   43  git push origin user-can-view-list-of-characters 
+   44  git status
+   45  git add css/styles.css 
+   46  git add index.html 
+   47  git commit -m "Updated mobile homepage"
+   48  git push origin user-can-view-list-of-characters 
+   49  git status
+   50  git css/styles.css
+   51  git add css/styles.css 
+   52  git add index.html 
+   53  git commit -m "Homepage looks good on desktop and mobile"
+   54  git status
+   55  git add css/styles.css 
+   56  git commit -m "homepage is responsive on desktop and mobile"
+   57  git push origin user-can-view-list-of-characters 
+   58  man man
+   59  man cat
+   60  man ls
+   61  man cat
+   62  man man
+   63  man echo
+   64  man touch
+   65  man man
+   66  man cat
+   67  man mkdir
+   68  mv
+   69  man mv
+   70  man rm
+   71  man cp
+   72  man ls
+   73  man pwd
+   74  man echo
+   75  cd ~/repos/m2-0122-code-solutions
+   76  git branch --list
+   77  git switch master
+   78  git pull origin master
+   79  git branch command-line-basics
+   80  git switch command-line-basics
+   81  git status
+   82  cd command-line-basics
+   83  pwd
+   84  cd command-line-basics
+   85  cd ~/repos/m2-0122-code-solutions/command-line-basics
+   86  cd command-line-basics/
+   87  pwd
+   88  man man
+   89  man cat
+   90  cat laziness.txt
+   91  cat impatience.txt
+   92  cat hubris.txt
+   93  man cat
+   94  cat laziness.txt - impatience.txt - hubris.txt
+   95  cd ~/repos/m2-0122-code-solutions/command-line-basics/
+   96  cat man
+   97  man cat
+   98  cat laziness.txt, impatience.txt, hubris.txt
+   99  cat laziness.txt impatience.txt hubris.txt
+  100  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  101  cat three-virtues.txt 
+  102  man ls
+  103  ls
+  104  ls -a
+  105  ls -F
+  106  man ls
+  107  ls -aF lfz-staff > lfz-staff/contents.txt
+  108  cat lfz-staff/contents.txt 
+  109  man pwd
+  110  pwd
+  111  pwd > i-was-here.txt
+  112  ls
+  113  cat i-was-here.txt 
+  114  man echo
+  115  echo 'Hello, World!'
+  116  echo 'Hello, World!' > hello.txt
+  117  ls
+  118  cat hello.txt
+  119  man touch
+  120  touch tag-youre-it.txt
+  121  man touch
+  122  ls
+  123  man touch
+  124  touch snoot/boot.txt
+  125  ls
+  126  ls /snoot
+  127  ls snoot
+  128  touch snoot/boop.txt
+  129  ls snoot
+  130  man mkdir
+  131  mkdir parent
+  132  ls
+  133  man mkdir
+  134  mkdir -p parent/child/grandchild
+  135  ls
+  136  touch parent/child/grandchild/.gitkeep
+  137  ls -a
+  138  ls parent
+  139  ls parent/child/grandchild/
+  140  ls parent/child/grandchild
+  141  ls -a parent/child/grandchild
+  142  man mv
+  143  mv pokiemans pokemon
+  144  ls
+  145  man rm
+  146  rm lol.txt
+  147  ls
+  148  ls snoot
+  149  rm boot.txt
+  150  rm snoot/boot.txt
+  151  ls snoot
+  152  man rm
+  153  rm -f kill-me/
+  154  rm --r kill-me/
+  155  ls
+  156  man history
+  157  man cp
+  158  cp and-then.txt no-and-then.txt
+  159  ls
+  160  cat and-then.txt no-and-then.txt 
+  161  history
+  162  history > command-history.txt
