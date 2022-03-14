@@ -9,9 +9,9 @@ if (process.argv[2] === 'read') {
 } else if (process.argv[2] === 'create' && process.argv[3]) {
   dataJson.notes[nextId] = process.argv[3];
   dataJson.nextId++;
-} else if (process.argv[2] === 'update' && process.argv[3] < nextId && process.argv[4]) {
+} else if (process.argv[2] === 'update' && Object.hasOwn(dataJson.notes, process.argv[3]) && process.argv[4]) {
   dataJson.notes[process.argv[3]] = process.argv[4];
-} else if (process.argv[2] === 'delete' && process.argv[3] < nextId) {
+} else if (process.argv[2] === 'delete' && Object.hasOwn(dataJson.notes, process.argv[3])) {
   delete dataJson.notes[process.argv[3]];
 }
 
