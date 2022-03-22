@@ -1,20 +1,8 @@
 const express = require('express');
 const app = express();
 
-const notes =
-  {
-    1:
-    {
-      content: 'The event loop is how a JavaScript runtime pushes asynchronous callbacks onto the stack once the stack is cleared.',
-      id: 1
-    },
-    2:
-    {
-      content: 'Prototypal inheritance is how JavaScript objects delegate behavior.',
-      id: 2
-    }
-
-  };
+const notes = {};
+let nextId = 1;
 
 app.get('/api/notes', (req, res) => {
   const notesArr = [];
@@ -40,6 +28,27 @@ app.get('/api/notes/:id', (req, res) => {
   } else {
     res.json(notes[id]);
   }
+});
+
+const jsonMiddleware = express.json();
+
+app.use(jsonMiddleware);
+
+app.post('/api/notes', (req, res, err) => {
+
+  const newNote = req.body;
+  if (!newNote.content) {
+    const errMsg = {
+      error: 'content is a required field'
+    };
+    res.status(400).send(errMsg);
+  } else {
+    newNote.id = nextId;
+    notes[nextId] = newNote;
+    nextId++;
+    res.status(201).send(newNote);
+  }
+
 });
 
 app.listen(3000, () =>
