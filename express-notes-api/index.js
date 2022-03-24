@@ -60,6 +60,35 @@ app.post('/api/notes', (req, res, err) => {
 
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+  const id = Number(req.params.id);
+  if (id < 1 || isNaN(id)) {
+    const errMsg = {
+      error: 'id must be a positive integer'
+    };
+    res.status(400).json(errMsg);
+  } else if (!dataJson.notes[id]) {
+    const notFound = {
+      error: `cannot find note with id ${id}`
+    };
+    res.status(404).json(notFound);
+  } else {
+    delete dataJson.notes[id];
+    const dataStringify = JSON.stringify(dataJson, null, 2);
+    fs.writeFile('data.json', dataStringify, err => {
+      if (err) {
+        console.error(err);
+        const errMsg = { error: 'An unexpected error occurred.' };
+        res.status(500).send(errMsg);
+      } else {
+        res.sendStatus(204);
+      }
+    });
+
+  }
+
+});
+
 app.listen(3000, () => {
 // eslint-disable-next-line no-console
   console.log('Listening to port 3000');
