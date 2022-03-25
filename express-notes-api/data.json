@@ -1,0 +1,101 @@
+{
+  "nextId": 41,
+  "notes": {
+    "2": {
+      "id": 2,
+      "content": "The event loop, this, closures, and prototypal inheritance are special about JavaScript."
+    },
+    "5": {
+      "id": 5,
+      "content": "In JavaScript, the value of `this` is determined when a function is called; not when it is defined."
+    },
+    "6": {
+      "id": 6,
+      "content": "A closure is formed when a function retains access to variables in its lexical scope."
+    },
+    "9": {
+      "id": 9,
+      "content": "Inertia is a property of matter."
+    },
+    "19": {
+      "content": "what",
+      "id": 19
+    },
+    "20": {
+      "content": "what",
+      "id": 20
+    },
+    "21": {
+      "content": "what",
+      "id": 21
+    },
+    "22": {
+      "content": "what",
+      "id": 22
+    },
+    "23": {
+      "content": "what",
+      "id": 23
+    },
+    "24": {
+      "content": "what",
+      "id": 24
+    },
+    "25": {
+      "content": "what",
+      "id": 25
+    },
+    "26": {
+      "content": "what",
+      "id": 26
+    },
+    "27": {
+      "content": "what",
+      "id": 27
+    },
+    "28": {
+      "content": "what",
+      "id": 28
+    },
+    "29": {
+      "content": "what",
+      "id": 29
+    },
+    "30": {
+      "content": "what",
+      "id": 30
+    },
+    "31": {
+      "content": "what",
+      "id": 31
+    },
+    "32": {
+      "content": "what",
+      "id": 32
+    },
+    "33": {
+      "content": "this is a new note",
+      "id": 33
+    },
+    "34": {
+      "content": "what",
+      "id": 34
+    },
+    "35": {
+      "content": "dog",
+      "id": 35
+    },
+    "37": {
+      "content": "this is a new note",
+      "id": 37
+    },
+    "39": {
+      "content": "this is a new note",
+      "id": 39
+    },
+    "40": {
+      "content": "i like cats",
+      "id": 40
+    }
+  }
+}
