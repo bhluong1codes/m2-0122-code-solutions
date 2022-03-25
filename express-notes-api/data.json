@@ -74,7 +74,7 @@
       "id": 32
     },
     "33": {
-      "content": "what",
+      "content": "this is a new note",
       "id": 33
     },
     "34": {
@@ -82,11 +82,11 @@
       "id": 34
     },
     "35": {
-      "content": "yay;\nhttp -v post localhost:3000/api/notes content=yay\nhttp -v post localhost:3000/api/notes content=yay",
+      "content": "dog",
       "id": 35
     },
     "37": {
-      "content": "hey",
+      "content": "this is a new note",
       "id": 37
     }
   }
