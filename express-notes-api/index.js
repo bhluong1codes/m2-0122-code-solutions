@@ -13,7 +13,7 @@ app.get('/api/notes', (req, res) => {
 
 app.get('/api/notes/:id', (req, res) => {
   const id = Number(req.params.id);
-  if (id < 1 || isNaN(id)) {
+  if (id < 1 || !Number.isInteger(id)) {
     const errMsg = {
       error: 'id must be a positive integer'
     };
@@ -62,7 +62,7 @@ app.post('/api/notes', (req, res, err) => {
 
 app.delete('/api/notes/:id', (req, res) => {
   const id = Number(req.params.id);
-  if (id < 1 || isNaN(id)) {
+  if (id < 1 || !Number.isInteger(id)) {
     const errMsg = {
       error: 'id must be a positive integer'
     };
@@ -90,7 +90,7 @@ app.delete('/api/notes/:id', (req, res) => {
 app.put('/api/notes/:id', (req, res) => {
   const id = Number(req.params.id);
   const newNote = req.body;
-  if (id < 1 || isNaN(id)) {
+  if (id < 1 || !Number.isInteger(id)) {
     const errMsg = {
       error: 'id must be a positive integer'
     };
