@@ -15,4 +15,23 @@ const db = new pg.Pool({
     rejectUnauthorized: false
   }
 });
-db.query();
+
+const jsonMiddleware = express.json();
+
+app.use(jsonMiddleware);
+
+app.get('/api/grades', (req, res) => {
+  const sql = `
+  SELECT *
+    from "grades"
+  `;
+  db.query(sql)
+    .then(result => {
+      const grades = result.rows;
+      res.status(200).json(grades);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred' });
+    });
+});
