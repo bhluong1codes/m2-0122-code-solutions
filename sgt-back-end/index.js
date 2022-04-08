@@ -58,9 +58,9 @@ app.post('/api/grades', (req, res) => {
       error: 'name is required'
     });
     return;
-  } else if (!Number.isInteger(score) || score < 0) {
+  } else if (!Number.isInteger(score) || score < 0 || score > 100) {
     res.status(400).json({
-      error: 'score must be a positive integer'
+      error: 'score must be a positive integer between 0 and 100'
     });
     return;
   }
@@ -111,9 +111,9 @@ app.put('/api/grades/:gradeId', (req, res) => {
       error: 'name is required'
     });
     return;
-  } else if (!Number.isInteger(score) || score < 0) {
+  } else if (!Number.isInteger(score) || score < 0 || score > 100) {
     res.status(400).json({
-      error: 'score must be a positive integer'
+      error: 'score must be a positive integer between 0 and 100'
     });
     return;
   }
