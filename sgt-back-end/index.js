@@ -38,13 +38,10 @@ app.get('/api/grades', (req, res) => {
 
 app.post('/api/grades', (req, res) => {
 
-  const params = [];
   const name = req.body.name;
   const course = req.body.course;
   const score = Number(req.body.score);
-  params.push(name);
-  params.push(course);
-  params.push(score);
+  const params = [name, course, score];
 
   if (!name && !course) {
     res.status(400).json({
@@ -76,7 +73,8 @@ app.post('/api/grades', (req, res) => {
 
   db.query(sql, params)
     .then(result => {
-      res.status(201).json(result.rows);
+      const grade = result.rows[0];
+      res.status(201).json(grade);
     })
     .catch(err => {
       console.error(err);
@@ -85,7 +83,6 @@ app.post('/api/grades', (req, res) => {
 });
 
 app.put('/api/grades/:gradeId', (req, res) => {
-
   const gradeId = Number(req.params.gradeId);
   if (!Number.isInteger(gradeId) || gradeId <= 0) {
     res.status(400).json({
@@ -94,14 +91,10 @@ app.put('/api/grades/:gradeId', (req, res) => {
     return;
   }
 
-  const params = [];
   const name = req.body.name;
   const course = req.body.course;
   const score = Number(req.body.score);
-  params.push(name);
-  params.push(course);
-  params.push(score);
-  params.push(gradeId);
+  const params = [name, course, score, gradeId];
 
   if (!name && !course) {
     res.status(400).json({
@@ -136,13 +129,46 @@ app.put('/api/grades/:gradeId', (req, res) => {
 
   db.query(sql, params)
     .then(result => {
-      const grade = result.rows;
+      const grade = result.rows[0];
       if (!grade) {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${gradeId}`
         });
       } else {
-        res.json(grade);
+        res.status(200).json(grade);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred' });
+    });
+});
+
+app.delete('/api/grades/:gradeId', (req, res) => {
+  const gradeId = Number(req.params.gradeId);
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    res.status(400).json({
+      error: '"gradeId" must be a positive integer'
+    });
+    return;
+  }
+
+  const params = [gradeId];
+  const sql = `
+    delete from "grades"
+      where "gradeId" = $1
+    returning *;
+  `;
+
+  db.query(sql, params)
+    .then(result => {
+      const grade = result.rows[0];
+      if (!grade) {
+        res.status(404).json({
+          error: `Cannot find grade with "gradeId" ${gradeId}`
+        });
+      } else {
+        res.sendStatus(204);
       }
     })
     .catch(err => {
